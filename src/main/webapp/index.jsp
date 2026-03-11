@@ -1,45 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Interactive Page</title>
+<title>Modern Interactive Page</title>
 
 <style>
 
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
     font-family: Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(270deg,#ff6a00,#ee0979,#00c6ff);
+    background-size:600% 600%;
+    animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:15px;
     text-align:center;
-    background: linear-gradient(135deg,#00c6ff,#0072ff);
-    color:white;
+    width:350px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
-.container{
-    margin-top:120px;
-}
-
-h1{
-    font-size:50px;
+.card h1{
+    color:#333;
+    margin-bottom:20px;
 }
 
 .message{
-    font-size:28px;
-    margin:20px;
-    padding:10px;
+    padding:12px;
+    margin:10px 0;
+    border-radius:8px;
+    background:#f1f1f1;
     transition:0.3s;
 }
 
 .message:hover{
-    color:yellow;
-    transform:scale(1.1);
+    background:#007BFF;
+    color:white;
+    transform:scale(1.05);
 }
 
 button{
-    padding:12px 25px;
-    font-size:18px;
+    margin-top:20px;
+    padding:12px 20px;
     border:none;
     border-radius:25px;
-    background:#ff9800;
+    background:#007BFF;
     color:white;
+    font-size:16px;
     cursor:pointer;
     transition:0.3s;
 }
@@ -49,11 +73,17 @@ button:hover{
     transform:scale(1.1);
 }
 
+#result{
+    margin-top:20px;
+    font-size:20px;
+    color:#333;
+}
+
 </style>
 
 <script>
-function changeMessage(){
-    document.getElementById("msg").innerHTML="Have a Great Day! 🚀";
+function showMessage(){
+    document.getElementById("result").innerHTML = "🎉 Welcome to Modern Web Design!";
 }
 </script>
 
@@ -61,19 +91,17 @@ function changeMessage(){
 
 <body>
 
-<div class="container">
+<div class="card">
 
-<h1>Welcome 🌟</h1>
+<h1>🌍 Hello World</h1>
 
-<div class="message">Hello World!</div>
-<div class="message">Bye World!</div>
-<div class="message">Khatam! Tata! GoodBye!</div>
+<div class="message">👋 Hello World!</div>
+<div class="message">✋ Bye World!</div>
+<div class="message">😄 Khatam! Tata! GoodBye!</div>
 
-<br>
+<button onclick="showMessage()">Click Me</button>
 
-<button onclick="changeMessage()">Click Me</button>
-
-<h2 id="msg"></h2>
+<div id="result"></div>
 
 </div>
 
